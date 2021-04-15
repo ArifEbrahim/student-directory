@@ -13,7 +13,7 @@ def input_students
     name = gets.chomp
   end
   # return the array of students
-  return students.select{|student|student[:name].length < 12} 
+  return students
 end
 
 def print_header
@@ -22,9 +22,12 @@ def print_header
 end
 
 def print(students)
-  students.each.with_index(1) do |student, index|
-    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
-  end 
+  no_of_students = students.length
+  counter = 1
+  while counter <= no_of_students
+    puts "#{counter}. #{students[counter-1][:name]} (#{students[counter-1][:cohort]} cohort)"
+    counter +=1
+  end
 end
 
 def print_footer(names)
