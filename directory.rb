@@ -13,9 +13,7 @@ def input_students
     name = gets.chomp
   end
   # return the array of students
-  puts "Enter filter character"
-  filter_char = gets.chomp
-  return students.select{|student|student[:name][0]==filter_char} 
+  return students.select{|student|student[:name].length < 12} 
 end
 
 def print_header
