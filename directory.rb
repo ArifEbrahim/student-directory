@@ -13,7 +13,9 @@ def input_students
     name = gets.chomp
   end
   # return the array of students
-  students 
+  puts "Enter filter character"
+  filter_char = gets.chomp
+  return students.select{|student|student[:name][0]==filter_char} 
 end
 
 def print_header
